@@ -14,29 +14,23 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="css/basic-page.css">
    <script src="js/jquery.min.js" type="text/javascript"></script>
+   <script src="js/smart.js" type="text/javascript"></script>
 </head>
 
 <body>
    <!--[if lt IE 7]>
          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <p>Which fruits do you like the most ?</p>
-      <div>
-         <input type="checkbox"/><span>Apples</span>
-         <input type="checkbox"/><span>Oranges</span>
-         <input type="checkbox"/><span>Bananas</span>
-         <input type="checkbox"/><span>Pear</span>
-         <input type="checkbox"/><span>Watermelon</span>
-      </div>
-      <div id="output" class="linebreak-items"></div>
+      <button id="add_row">add a new row</button>
+      <div id="rows"></div>
    </body>
 
 </html>
 <script type="text/javascript">
    $(document).ready(function () {
-      $("[type=checkbox]").change(function(e) {
-         $("#output").html("<p>You seem to like : </>")
-            .append($(":checked").next().clone());
+      $("#add_row").click(function() {
+         myvar.count++;
+         $("#rows").append("<p>new paragraph " +myvar.count+ "</p>");
       });
    });
 </script>
